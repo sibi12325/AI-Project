@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>gimme ur filez</h1>
+    
+    <form action="/analyze" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".xlsx,.xls"  required>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if csv_data %}
+        <h2>Original CSV Data:</h2>
+        <pre>{{ csv_data[:5000] }}...</pre>
+    {% endif %}
+
+    {% if processed_data %}
+        <h2>Processed CSV Data:</h2>
+        <pre>{{ processed_data[:5000] }}...</pre>
+    {% endif %}
+
+    {% if summary %}
+        <h2>AI-Generated Summary:</h2>
+        <p>{{ summary | safe}}</p>
+    {% endif %}
+
+    {% if errors %}
+        <h2>AI-Detected Potential Issues:</h2>
+        <ul>
+        {% for error in errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if data_summary %}
+        <h2>Data Summary:</h2>
+        <p>Number of rows: {{ data_summary.num_rows }}</p>
+        <p>Number of columns: {{ data_summary.num_columns }}</p>
+        <h3>Column Names:</h3>
+        <ul>
+        {% for column in data_summary.column_names %}
+            <li>{{ column }}</li>
+        {% endfor %}
+        </ul>
+        <h3>Data Types:</h3>
+        <ul>
+        {% for column, dtype in data_summary.data_types.items() %}
+            <li>{{ column }}: {{ dtype }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if corrected_csv %}
+        <h2>Download Corrected CSV</h2>
+        <a href="{{ url_for('download_corrected_csv') }}" download="corrected_data.csv">Download Corrected CSV</a>
+    {% endif %}
+
+{% endblock %}

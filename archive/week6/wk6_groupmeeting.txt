@@ -1,0 +1,66 @@
+Pre Meeting Agenda:
+
+0.1 Auditor activites (i.e., review documentation etc)
+
+1. Team split and feature assignments for the next iteration of implementation
+2. Evaluation of Haystack research findings
+3. Planning for continued development of the Flask prototype
+4. Review Marks email
+5. Discussion of potential advanced features to be implemented if time permits
+6. Review of project timeline and upcoming milestones
+7. Status Update deck update for next week
+8. Review of Sprint 2 deliverable and its contents.
+9. Any questions?
+
+Convert this file into .md after notes are taken
+
+--------------------------------------------------------
+
+Meeting Start Time: 5:09
+
+Attendees: Camilo, Josh, Sam, Sibi, James
+
+josh does shows the demonstration of the latest implementation hes done
+
+the code has been modularised and we are discussing on how to split the requirements
+
+Idea: is split into the teams
+
+discussion of whether haystack is to be used
+
+Task 1: Analyse using pandas cebrerus - sam has done pandas - assigned to sam
+
+Task 2: data cleaning (such as removing whitespace or redundancnt info) - sibi, james
+
+task 3: Segmenting the data from the rest of the data (retriever) - josh
+
+task 4: prompting for the errors and the summary including the creations of - to be completed at a later date
+
+Learning:
+
+    2 hours - learning haystack?
+
+    1 hour - prompt engineering - openai and claude documentation may be useful here
+
+    ?? - processing csv data
+
+    ?? - transformers 
+
+
+task 4 is likely best done at the end
+
+issues 
+
+mark - discussion of cost benefit with him for next week
+
+discussion of the email mark sent - task: play around with the dummy system
+
+Mark's code doesnt work - check before the end of the week to see if it works
+
+Email about dummy system
+
+send the auditor the the audit files before the end of next weekend
+
+end of meeting 5:45.
+
+
